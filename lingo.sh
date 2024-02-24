@@ -40,7 +40,7 @@ for ((i = 0; i < ${#input_string}; i++));
 do
 	curr_char=${input_string:$i:1}
 
-	if [ $curr_char == " " ]; then
+	if [ "$curr_char" == " " ]; then
 		echo
 		continue
 	else
