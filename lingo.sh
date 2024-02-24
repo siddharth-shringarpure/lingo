@@ -32,9 +32,37 @@ letter_to_word() {
 	esac
 }
 
-# Main
 
-read -p "Enter text to convert: " input_string
+# Check for flags and input arguments.
+while getopts "nh" option; do
+  case $option in
+    n) nato_flag=true;;
+    h) help_flag=true;;
+    *) echo "Invalid option: -$OPTARG" >&2; exit 1;;
+  esac
+done
+shift $((OPTIND-1))  # Removes the flag when passing in the input string. Assumes 1 flag exists.
+
+# Display help message and exit if the help flag is set
+if [ "$help_flag" = true ]; then
+  cat <<EOF
+-----
+Usage: lingo [-n|-h] [TEXT]
+    -n: Use NATO phonetic alphabet (if implemented)
+    -h: Display this help message and exit
+    TEXT: The text to convert (optional, prompts if not provided)
+-----
+EOF
+  exit 0
+fi
+
+
+# Get input string, either from CLI arguments or user prompt
+if [[ $# -gt 0 ]]; then
+  input_string="$1"
+else
+  read -p "Enter text to convert: " input_string
+fi
 
 for ((i = 0; i < ${#input_string}; i++));
 do
@@ -43,10 +71,10 @@ do
 	if [ "$curr_char" == " " ]; then
 		echo
 		continue
-	else
-		if [[ $curr_char =~ [[:alpha:]] ]]; then
-			phonetic_word=$(letter_to_word "$curr_char")
-			echo "$curr_char: $phonetic_word"
-		fi
-	fi
+	elif [[ $curr_char =~ [[:alpha:]] ]]; then
+        phonetic_word=$(letter_to_word "$curr_char")
+        echo "$curr_char: $phonetic_word"
+    else
+        echo $curr_char
+    fi
 done
