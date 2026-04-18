@@ -5,6 +5,8 @@ Core package for NATO phonetic alphabet conversion.
 ## Installation & Setup
 
 This project uses **uv** for dependency management and running.
+Using `uv` is recommended for consistent local setup, but commands can also be
+run directly from an already-activated environment.
 
 ```bash
 # Clone the repository
@@ -55,6 +57,9 @@ uv run pytest -v
 ```bash
 # Check with Ruff
 uv run ruff check src/ tests/
+
+# Type check
+uv run ty check
 ```
 
 ### Project Structure
