@@ -1,0 +1,23 @@
+[project]
+name = "lingo"
+version = "0.1.0"
+description = "CLI tool for converting text to the NATO phonetic alphabet equivalent"
+readme = "README.md"
+authors = [
+    { name = "sid", email = "35936587+siddharth-shringarpure@users.noreply.github.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+lingo = "lingo:main"
+
+[build-system]
+requires = ["uv_build>=0.9.21,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+    "ruff>=0.15.11",
+]
