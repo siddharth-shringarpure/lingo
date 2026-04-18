@@ -17,6 +17,23 @@ uv run lingo "hello world"
 uv run lingo
 ```
 
+## Install Systemwide
+
+To make the `lingo` command available globally through uv tools, install the published package:
+
+```bash
+uv tool install lingo-cli
+
+# Then run it directly
+lingo "hello world"
+```
+
+To update later:
+
+```bash
+uv tool upgrade lingo-cli
+```
+
 ## What It Does
 
 - Converts letters to NATO phonetic words
