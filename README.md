@@ -1,5 +1,7 @@
 # lingo
 
+[![CI](https://github.com/siddharth-shringarpure/lingo/actions/workflows/ci.yml/badge.svg)](https://github.com/siddharth-shringarpure/lingo/actions/workflows/ci.yml)
+
 A command-line tool for converting text to NATO phonetic alphabet words.
 
 ## Quickstart
