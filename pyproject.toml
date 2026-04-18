@@ -1,5 +1,5 @@
 [project]
-name = "lingo"
+name = "lingo-cli"
 version = "0.1.0"
 description = "CLI tool for converting text to the NATO phonetic alphabet equivalent"
 readme = "README.md"
@@ -16,9 +16,15 @@ lingo = "lingo:main"
 requires = ["uv_build>=0.9.21,<0.10.0"]
 build-backend = "uv_build"
 
+[tool.uv.build-backend]
+module-name = "lingo"
+
 [dependency-groups]
 dev = [
     "pytest>=9.0.3",
     "ruff>=0.15.11",
     "ty>=0.0.31",
 ]
+
+[project.urls]
+Repository = "https://github.com/siddharth-shringarpure/lingo"
