@@ -1,13 +1,12 @@
 [project]
 name = "lingo-cli"
-version = "0.1.0"
+version = "0.1.1"
 description = "CLI tool for converting text to the NATO phonetic alphabet equivalent"
 readme = "README.md"
-authors = [
-    { name = "sid", email = "35936587+siddharth-shringarpure@users.noreply.github.com" }
-]
 requires-python = ">=3.13"
 dependencies = []
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
 
 [project.scripts]
 lingo = "lingo:main"
@@ -27,4 +26,6 @@ dev = [
 ]
 
 [project.urls]
+Issues = "https://github.com/siddharth-shringarpure/lingo/issues"
+Releases = "https://github.com/siddharth-shringarpure/lingo/releases"
 Repository = "https://github.com/siddharth-shringarpure/lingo"
